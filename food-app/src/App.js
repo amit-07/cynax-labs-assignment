@@ -82,7 +82,7 @@ if(!tickets.length){
       </header>
         <FormDialog handleSubmit={handleSubmit}/>
         <BasicTable rows={tickets} remove={handleRemove} />
-        <SectionHeader />
+        <SectionHeader theme={theme}/>
       </div>
     </ThemeProvider>
   );
