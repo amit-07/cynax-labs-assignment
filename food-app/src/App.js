@@ -1,9 +1,10 @@
 import React, {useEffect, useState, useCallback, useReducer } from 'react';
 import './App.css';
-import {getTickets, createTicket, deleteticket, getTicket} from "./services/ticket-service";
+import {getTickets, createTicket, deleteticket} from "./services/ticket-service";
 import BasicTable from './Components/Table';
 import FormDialog from './Components/Dialog';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import SectionHeader from './Components/SectionHeader';
 
 const theme = createTheme({
   status: {
@@ -68,8 +69,6 @@ function App() {
     }
   };
 
-  console.log(tickets);
-
 if(!tickets.length){
   return (
     <>Loading tickets data...</>
@@ -82,7 +81,8 @@ if(!tickets.length){
         <h1 color="secondary">Tickets List</h1>
       </header>
         <FormDialog handleSubmit={handleSubmit}/>
-        <BasicTable rows={tickets} remove={handleRemove}/>
+        <BasicTable rows={tickets} remove={handleRemove} />
+        <SectionHeader />
       </div>
     </ThemeProvider>
   );
