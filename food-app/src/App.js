@@ -5,6 +5,7 @@ import BasicTable from './Components/Table';
 import FormDialog from './Components/Dialog';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import SectionHeader from './Components/SectionHeader';
+import SectionContent from './Components/SectionContent';
 
 const theme = createTheme({
   status: {
@@ -83,6 +84,10 @@ if(!tickets.length){
         <FormDialog handleSubmit={handleSubmit}/>
         <BasicTable rows={tickets} remove={handleRemove} />
         <SectionHeader theme={theme}/>
+        <SectionContent 
+        characteristics="Similarity Measures between Molecules" 
+        percentage={125}
+        change={10} />
       </div>
     </ThemeProvider>
   );

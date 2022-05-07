@@ -3,26 +3,9 @@ import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import PersonSearchOutlinedIcon from '@mui/icons-material/PersonSearchOutlined';
-import LinearProgress, { linearProgressClasses } from '@mui/material/LinearProgress';
-import { styled } from '@mui/material/styles';
 import Grid from "@mui/material/Grid";
+import BorderLinearProgress from './LinearProgressBar';
 
-
-const BorderLinearProgress = styled(LinearProgress)(({ theme, backgroundColor }) => ({
-    height: 10,
-    borderRadius: 5,
-    [`&.${linearProgressClasses.colorPrimary}`]: {
-        backgroundColor: theme.palette.grey[theme.palette.mode === 'light' ? 200 : 800],
-    },
-    [`& .${linearProgressClasses.bar}`]: {
-        borderRadius: 5,
-        backgroundColor: theme.palette.mode === 'light' ? backgroundColor : '#308fe8',
-    },
-    [`& .${linearProgressClasses.bar}:nth-child(2)`]: {
-        borderRadius: 5,
-        backgroundColor: theme.palette.mode === 'light' ? '#black' : '#308fe8',
-    },
-}));
 
 
 const SectionHeader = (props) => {
@@ -33,8 +16,7 @@ const SectionHeader = (props) => {
                 flexWrap: 'wrap',
                 '& > :not(style)': {
                     m: 1,
-                    width: 128,
-                    height: 128,
+                    width: 128
                 }
             }}
         >
@@ -58,11 +40,11 @@ const SectionHeader = (props) => {
                         546
                     </Typography>
                     <Grid spacing={1} container style={{alignItems: "center"}}>
-                        <Grid xs item style={{}}>
+                        <Grid xs item style={{flex: "0.3"}}>
                             <BorderLinearProgress variant="determinate" value={95} backgroundColor="#5d5be0"/>
                         </Grid>
-                        <Grid xs item style={{paddingLeft: "0", flex: "0.5"}}>
-                            <BorderLinearProgress variant="determinate" value={50} backgroundColor=""/>
+                        <Grid xs item style={{paddingLeft: "0", flex: "0.3"}}>
+                            <BorderLinearProgress variant="determinate" value={35} backgroundColor=""/>
                         </Grid>
                     </Grid>
                 </div>
